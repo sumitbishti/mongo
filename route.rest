@@ -1,0 +1,23 @@
+GET http://localhost:3000/
+
+###
+
+GET http://localhost:3000/books?page=1
+
+###
+
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+    "name": "post4",
+    "rating": 5
+}
+
+###
+PATCH  http://localhost:3000/books/6429a1db2a5adb785d2c7aa6
+Content-Type: application/json
+
+{
+    "name": "patched"
+}
