@@ -1,10 +1,11 @@
+require('dotenv').config()
 const { MongoClient } = require('mongodb')
 
 let db;
 
 const connectToDb = (cb) => {
-    // const uri = "mongo://localhost:27017/bookstoref"
-    const uri = "mongodb+srv://sumit:zxcmnb@cluster0.j2fvghc.mongodb.net/?retryWrites=true&w=majority"
+    // const uri = "mongo://localhost:27017/bookstore"
+    const uri = process.env.MONGO_URI
     MongoClient.connect(uri)
         .then((client) => {
             db = client.db()
